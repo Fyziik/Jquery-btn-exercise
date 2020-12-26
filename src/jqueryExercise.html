@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        $(document).ready(function () {
+
+            $('h1').hide();
+            $('button').hide();
+
+            $('h1').text("Jquery Exercise Dat19v1")
+            $('button').text("Click me")
+
+            $('h1').fadeIn(1000);
+            $('button').fadeIn(1000);
+
+            $('button').click(function () {
+                $(this).addClass("buttonResize")
+                $(this).html("Click again!")
+                let listElement = document.createElement("li")
+                listElement.innerText = "Dette er noget tekst"
+                $("ul").append(listElement)
+                $("li").hide();
+                $("li").slideDown();
+            })
+
+
+        })
+    </script>
+
+</head>
+<body>
+
+<h1></h1>
+<button></button>
+<ul></ul>
+
+</body>
+</html>

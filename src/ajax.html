@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax example</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="content">
+
+    </div>
+
+    <script>
+
+        $(document).ready(function () {
+
+            //GET
+            $.ajax({
+                method: "GET",
+                url: "https://moviesfrontandback.herokuapp.com/api/movies",
+            }).done(function (data) {
+                movieData = data;
+                $("div").append(movieData[0].title)
+            })
+
+            //POST
+            $.ajax({
+                method: "POST",
+                url: "https://moviesfrontandback.herokuapp.com/api/movies",
+                data: {
+                    title: "Funny guy 2",
+                    releaseYear: "1995",
+                    director: "Some dude",
+                    genre: "Comedy"
+                }
+            }).done(function (data) {
+                alert("SAVED DATA")
+            })
+
+
+        })
+
+
+
+    </script>
+
+</body>
+</html>

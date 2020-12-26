@@ -1,0 +1,23 @@
+ul {
+    border: black solid 1px;
+    list-style: none;
+}
+
+li {
+    border: black solid 1px;
+}
+
+li:nth-of-type(even) {
+    background: whitesmoke;
+}
+
+input {
+    width: 30%;
+    margin-top: 3%;
+    margin-left: 33%;
+    margin-bottom: 5%;
+}
+
+h1 {
+    text-align: center;
+}

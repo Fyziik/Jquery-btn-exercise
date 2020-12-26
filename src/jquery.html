@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Finding HTML Elements by ID</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1></h1>
+    <p id="id01">Hello World!</p>
+    <p id="id02">Hello Sweden!</p>
+    <p id="id03">Hello Japan!</p>
+
+    <script>
+        $(document).ready(function () {
+
+            $("h1").text($(document).attr('title'))
+
+            $("p").click(function () {
+                $(this).hide(1000);
+                $(this).show(1000);
+            })
+
+            $('h1').text("Dette er min overskrift")
+
+        });
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="toDoList.css">
+    <script>
+
+        $(document).ready(function () {
+
+            $('h1').text("Welcome to my to do list - WIP")
+
+            $('input').keydown(function (e) {
+                if (e.keyCode == 13) {
+                    //Add task to list and remove text from input field
+                    let inputText = $(this).val();
+                    let listElement = document.createElement("li")
+                    listElement.innerText = inputText;
+                    let listElementButton = document.createElement("button")
+                    listElementButton.innerText = "X"
+                    listElementButton.style.background = "red";
+                    listElementButton.addEventListener("click", function () {
+                        this.parentElement.remove();
+                    })
+                    $(listElement).append(listElementButton);
+                    $("ul").append(listElement);
+                    $(this).val("")
+                }
+            })
+
+        })
+
+    </script>
+</head>
+<body>
+
+
+<div class="jumbotron col-8 offset-2">
+    <h1></h1>
+    <input type="text" placeholder="Add task here and press enter">
+    <div>
+        <ul></ul>
+    </div>
+</div>
+
+
+
+</body>
+</html>
